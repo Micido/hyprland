@@ -16,7 +16,7 @@ hl.config({
 	},
 	cursor = {
 		inactive_timeout = 2,
-		hide_on_keypress = true,
+		hide_on_key_press = true,
 		warp_on_change_workspace = 1,
 		warp_on_toggle_special = 1,
 		persistent_warps = true,

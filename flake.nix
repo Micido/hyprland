@@ -12,6 +12,7 @@
 		hyprland-scroll-overview = {
 			url = "github:yayuuu/hyprland-scroll-overview";
 			inputs.hyprland.follows = "hyprland";
+			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
 		wrapper = {
@@ -27,10 +28,15 @@
 	in {
 		packages = forAllSystem (
 			pkgs : {
-				default = wrapper.wrappers.hyprland.wrap {
+				default = wrapper.wrappers.hyprland.wrap (let
+					system = pkgs.stdenv.hostPlatform.system;
+				in {
 					inherit pkgs;
+					package = inputs.hyprland.packages.${system}.default;
 					configFile = ./hyprland.lua;
-				};
+					lua.dirs = [ ./lua ];
+					plugins = [ inputs.hyprland-scroll-overview.packages.${system}.default ];
+				});
 			}
 		);
 	};

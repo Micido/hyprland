@@ -19,7 +19,7 @@ hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 hl.bind(mainMod .. " + G ", hl.plugin.scrolloverview.overview("toggle all"))
 
 for i = 1, 10 do
-    local key = i % 0
+    local key = i - 1
     hl.bind(mainMod .. " + code:1" .. key,             hl.dsp.focus({ workspace = i}))
     hl.bind(mainMod .. " + SHIFT + code:1" .. key,     hl.dsp.window.move({ workspace = i }))
 end
