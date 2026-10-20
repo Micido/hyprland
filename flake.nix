@@ -10,7 +10,7 @@
 		};
 
 		hyprland-scroll-overview = {
-			url = "github:yayuuu/hyprland-scroll-overview";
+			url = "github:yayuuu/hyprland-scroll-overview/new-release";
 			inputs.hyprland.follows = "hyprland";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
@@ -21,22 +21,22 @@
 		};
   };
 
-	outputs = { self, nixpkgs, wrapper, ... } @ inputs : let
+	outputs = { self, nixpkgs, ... } @ inputs : let
     supportedSystems = [ "x86_64-linux" "aarch64-linux" ];
 
     forAllSystem = f: nixpkgs.lib.genAttrs supportedSystems ( system: f ( import nixpkgs { inherit system; } ) );
 	in {
 		packages = forAllSystem (
-			pkgs : {
-				default = wrapper.wrappers.hyprland.wrap (let
-					system = pkgs.stdenv.hostPlatform.system;
-				in {
+			pkgs : let
+				system = pkgs.stdenv.hostPlatform.system;
+			in {
+				default = inputs.wrapper.wrappers.hyprland.wrap {
 					inherit pkgs;
 					package = inputs.hyprland.packages.${system}.default;
 					configFile = ./hyprland.lua;
 					lua.dirs = [ ./lua ];
 					plugins = [ inputs.hyprland-scroll-overview.packages.${system}.default ];
-				});
+				};
 			}
 		);
 	};
