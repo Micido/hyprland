@@ -35,7 +35,7 @@
 					package = inputs.hyprland.packages.${system}.default;
 					configFile = ./hyprland.lua;
 					lua.dirs = [ ./lua ];
-					plugins = [ inputs.hyprland-scroll-overview.packages.${system}.default ];
+					# plugins = [ inputs.hyprland-scroll-overview.packages.${system}.default ];
 				};
 			}
 		);
