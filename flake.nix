@@ -9,11 +9,11 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		hyprland-scroll-overview = {
-			url = "github:yayuuu/hyprland-scroll-overview/new-release";
-			inputs.hyprland.follows = "hyprland";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
+		# hyprland-scroll-overview = {
+		# 	url = "github:yayuuu/hyprland-scroll-overview/new-release";
+		# 	inputs.hyprland.follows = "hyprland";
+		# 	inputs.nixpkgs.follows = "nixpkgs";
+		# };
 
 		wrapper = {
 			url = "github:BirdeeHub/nix-wrapper-modules";

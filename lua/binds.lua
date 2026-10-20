@@ -16,7 +16,9 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 
-hl.bind(mainMod .. " + G ", hl.plugin.scrolloverview.overview("toggle all"))
+if false then
+	hl.bind(mainMod .. " + G ", hl.plugin.scrolloverview.overview("toggle all"))
+end
 
 for i = 1, 10 do
     local key = i - 1
