@@ -2,18 +2,17 @@
   description = "A very basic flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
 
 		hyprland = {
 			url = "github:hyprwm/Hyprland";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-		# hyprland-scroll-overview = {
-		# 	url = "github:yayuuu/hyprland-scroll-overview/new-release";
-		# 	inputs.hyprland.follows = "hyprland";
-		# 	inputs.nixpkgs.follows = "nixpkgs";
-		# };
+		hyprland-scroll-overview = {
+			url = "github:yayuuu/hyprland-scroll-overview";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
 		wrapper = {
 			url = "github:BirdeeHub/nix-wrapper-modules";
@@ -32,10 +31,9 @@
 			in {
 				default = inputs.wrapper.wrappers.hyprland.wrap {
 					inherit pkgs;
-					package = inputs.hyprland.packages.${system}.default;
 					configFile = ./hyprland.lua;
 					lua.dirs = [ ./lua ];
-					# plugins = [ inputs.hyprland-scroll-overview.packages.${system}.default ];
+					plugins = [ inputs.hyprland-scroll-overview.packages.${system}.default ];
 				};
 			}
 		);

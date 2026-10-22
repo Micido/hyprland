@@ -16,7 +16,7 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 
-if false then
+if hl.plugin.scrolloverview ~= nil then
 	hl.bind(mainMod .. " + G ", hl.plugin.scrolloverview.overview("toggle all"))
 end
 
