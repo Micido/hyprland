@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
 
 		hyprland = {
-			url = "github:hyprwm/Hyprland/v0.55.0";
+			url = "github:hyprwm/Hyprland/v0.56.0";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
