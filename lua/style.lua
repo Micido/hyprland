@@ -61,7 +61,7 @@ hl.config({
 
 hl.config({
 	scrolling = {
-		fullscreen_on_one_column = true,
+		fullscreen_on_one_column = false,
 		explicit_column_widths = "0.5, 1.0"
 	},
 })
@@ -71,7 +71,7 @@ if hl.plugin.scrolloverview ~= nil then
 		plugin = {
 			scrolloverview = {
 				gesture_distance = 200,
-				scale = 0.7,
+				scale = 0.6,
 				workspace_gap = 50,
 				layout = "vertical",
 				wallpaper = 2,

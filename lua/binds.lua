@@ -33,7 +33,7 @@ if hl.plugin.scrolloverview ~= nil then
 			plugin = {
 				scrolloverview = {
 					layout = "vertical",
-					scale = 0.7
+					scale = 0.6
 				}
 			}
 		})
@@ -45,7 +45,7 @@ if hl.plugin.scrolloverview ~= nil then
     hl.bind("right",  hl.plugin.scrolloverview.navigate("right"))
     hl.bind("up",     hl.plugin.scrolloverview.navigate("up"))
     hl.bind("down",   hl.plugin.scrolloverview.navigate("down"))
-    hl.bind("return", hl.plugin.scrolloverview.overview("select"))
+    hl.bind("return", hl.plugin.scrolloverview.overview("off"))
     hl.bind("escape", hl.plugin.scrolloverview.overview("off"))
     hl.bind("mouse:272", function()
         hl.plugin.scrolloverview.overview("select")
