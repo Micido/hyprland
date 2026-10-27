@@ -69,9 +69,9 @@ if hl.plugin.scrolloverview ~= nil then
 	hl.config({
 		plugin = {
 			scrolloverview = {
-				gesture_distance = 300,
+				gesture_distance = 200,
 				scale = 0.7,
-				workspace_gap = 100,
+				workspace_gap = 50,
 				layout = "vertical",
 				wallpaper = 2,
 				blur = true,
