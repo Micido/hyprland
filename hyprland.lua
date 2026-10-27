@@ -14,6 +14,7 @@ require("inputs")
 require("style")
 require("rules")
 require("monitors")
+require("animations")
 
 -------------------
 ---- AUTOSTART ----
