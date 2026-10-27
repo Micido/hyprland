@@ -2,10 +2,6 @@
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
 
-local start_fs = {
-	{ class = "zen" }
-}
-
 hl.window_rule({
 	-- Fix some dragging issues with XWayland
 	name  = "fix-xwayland-drags",

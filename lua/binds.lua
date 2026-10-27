@@ -6,26 +6,39 @@ local altTab = require("alttab")
 
 local mainMod = "SUPER"
 
-hl.bind(mainMod .. " + Q",     hl.dsp.exec_cmd("kitty"))
-hl.bind(mainMod .. " + W",     hl.dsp.window.close())
-hl.bind(mainMod .. " + M",     hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
-hl.bind(mainMod .. " + V",     hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd("rofi -show drun"))
-hl.bind(mainMod .. " + P",     hl.dsp.window.pseudo())
+hl.bind(mainMod .. " + Q",         hl.dsp.exec_cmd("kitty"))
+hl.bind(mainMod .. " + W",         hl.dsp.window.close())
+hl.bind(mainMod .. " + M",         hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + V",         hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + Space",     hl.dsp.exec_cmd("rofi -show drun"))
+hl.bind(mainMod .. " + P",         hl.dsp.window.pseudo())
 
-hl.bind(mainMod .. " + left",  hl.dsp.layout("focus l"))
-hl.bind(mainMod .. " + right", hl.dsp.layout("focus r"))
-hl.bind(mainMod .. " + up",    hl.dsp.layout("focus u"))
-hl.bind(mainMod .. " + down",  hl.dsp.layout("focus d"))
+hl.bind(mainMod .. " + left",      hl.dsp.layout("focus l"))
+hl.bind(mainMod .. " + right",     hl.dsp.layout("focus r"))
+hl.bind(mainMod .. " + up",        hl.dsp.layout("focus u"))
+hl.bind(mainMod .. " + down",      hl.dsp.layout("focus d"))
 
+hl.bind(mainMod .. " + F",         hl.dsp.layout("colresize +conf"))
 
+hl.bind(mainMod .. " + comma",     hl.dsp.layout("consume_or_expel prev"))
+hl.bind(mainMod .. " + semicolon", hl.dsp.layout("consume_or_expel next"))
 
 if hl.plugin.scrolloverview ~= nil then
 	hl.bind("ALT + Tab", altTab.next, { submap_universal = true })
 	hl.bind("ALT + Alt_L", altTab.close, { release = true, transparent = true })
 	hl.bind("ALT + Alt_R", altTab.close, { release = true, transparent = true })
 
-	hl.bind(mainMod .. " + G ", hl.plugin.scrolloverview.overview("toggle all"))
+	hl.bind(mainMod .. " + G ", function ()
+		hl.config({
+			plugin = {
+				scrolloverview = {
+					layout = "vertical",
+					scale = 0.7
+				}
+			}
+		})
+		hl.plugin.scrolloverview.overview("toggle all")
+	end)
 
 	hl.define_submap("scrolloverview", function()
     hl.bind("left",   hl.plugin.scrolloverview.navigate("left"))
