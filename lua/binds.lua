@@ -2,6 +2,8 @@
 ---- KEYBINDINGS ----
 ---------------------
 
+local altTab = require("alttab")
+
 local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + Q",     hl.dsp.exec_cmd("kitty"))
@@ -16,8 +18,15 @@ hl.bind(mainMod .. " + right", hl.dsp.layout("focus r"))
 hl.bind(mainMod .. " + up",    hl.dsp.layout("focus u"))
 hl.bind(mainMod .. " + down",  hl.dsp.layout("focus d"))
 
+
+
 if hl.plugin.scrolloverview ~= nil then
+	hl.bind("ALT + Tab", altTab.next, { submap_universal = true })
+	hl.bind("ALT + Alt_L", altTab.close, { release = true, transparent = true })
+	hl.bind("ALT + Alt_R", altTab.close, { release = true, transparent = true })
+
 	hl.bind(mainMod .. " + G ", hl.plugin.scrolloverview.overview("toggle all"))
+
 	hl.define_submap("scrolloverview", function()
     hl.bind("left",   hl.plugin.scrolloverview.navigate("left"))
     hl.bind("right",  hl.plugin.scrolloverview.navigate("right"))
