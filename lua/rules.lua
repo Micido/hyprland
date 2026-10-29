@@ -3,6 +3,16 @@
 --------------------------------
 
 hl.window_rule({
+	-- Yes
+	name = "everything starts looong",
+	match = {
+		class = "*",
+	},
+
+	scrolling_width = 1.0,
+})
+
+hl.window_rule({
 	-- Fix some dragging issues with XWayland
 	name  = "fix-xwayland-drags",
 	match = {
