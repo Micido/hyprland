@@ -28,7 +28,7 @@ function M.next()
 		SessionOrder = GetSessionOrder()
 	end
 	FocusIndex = FocusIndex + 1
-	FocusIndex = FocusIndex % #SessionOrder
+	FocusIndex = FocusIndex % (#SessionOrder + 1)
 	hl.dsp.focus({ window = "pid:" .. SessionOrder[FocusIndex] })
 end
 
