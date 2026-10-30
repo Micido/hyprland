@@ -9,7 +9,7 @@ hl.window_rule({
 		class = "*",
 	},
 
-	scrolling_width = 1.0,
+	scrolling_width = 2.0,
 })
 
 hl.window_rule({

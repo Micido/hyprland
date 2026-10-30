@@ -24,15 +24,15 @@ hl.bind(mainMod .. " + F",         hl.dsp.layout("colresize +conf"))
 hl.bind(mainMod .. " + comma",     hl.dsp.layout("consume_or_expel prev"))
 hl.bind(mainMod .. " + semicolon", hl.dsp.layout("consume_or_expel next"))
 
--- hl.bind("ALT + TAB",   alter.next,  { submap_universal = true })
--- hl.bind("ALT + SHIFT", alter.prev,  { submap_universal = true })
--- hl.bind("ALT + Alt_L", alter.close, { release = true, transparent = true })
--- hl.bind("ALT + Alt_R", alter.close, { release = true, transparent = true })
+hl.bind("ALT + TAB",         alter.next,  { submap_universal = true })
+hl.bind("ALT + SHIFT + TAB", alter.prev,  { submap_universal = true })
+hl.bind("ALT + Alt_L",       alter.close, { release = true, transparent = true })
+hl.bind("ALT + Alt_R",       alter.close, { release = true, transparent = true })
 
 if hl.plugin.scrolloverview ~= nil then
-	hl.bind("ALT + Tab",   altTab.next,  { submap_universal = true })
-	hl.bind("ALT + Alt_L", altTab.close, { release = true, transparent = true })
-	hl.bind("ALT + Alt_R", altTab.close, { release = true, transparent = true })
+	-- hl.bind("ALT + Tab",   altTab.next,  { submap_universal = true })
+	-- hhl.bind("ALT + Alt_L", altTab.close, { release = true, transparent = true })
+	-- hhl.bind("ALT + Alt_R", altTab.close, { release = true, transparent = true })
 
 	hl.bind(mainMod .. " + G ", function ()
 		hl.config({
