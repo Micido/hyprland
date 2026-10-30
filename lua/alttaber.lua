@@ -20,7 +20,7 @@ end
 function M.prev()
 	if FocusIndex == 0 or SessionOrder == nil then return end
 	FocusIndex = FocusIndex - 1
-	hl.dsp.focus({ window = "pid:" .. SessionOrder[FocusIndex] })
+	hl.dispatch(hl.dsp.focus({ window = "pid:" .. SessionOrder[FocusIndex] }))
 end
 
 function M.next()
@@ -29,7 +29,7 @@ function M.next()
 	end
 	FocusIndex = FocusIndex + 1
 	FocusIndex = FocusIndex % (#SessionOrder + 1)
-	hl.dsp.focus({ window = "pid:" .. SessionOrder[FocusIndex] })
-end
+	hl.dispatch(hl.dsp.focus({ window = "pid:" .. SessionOrder[FocusIndex] }))
+	end
 
 return M
