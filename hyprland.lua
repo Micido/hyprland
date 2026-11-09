@@ -9,12 +9,7 @@ if handle then
 	end
 end
 
-require("binds")
-require("inputs")
-require("style")
-require("rules")
-require("monitors")
-require("animations")
+require("autoload")
 
 -------------------
 ---- AUTOSTART ----

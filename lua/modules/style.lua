@@ -2,7 +2,7 @@
 ---- LOOK AND FEEL ----
 -----------------------
 
-local cs = require("rose-pine")
+local cs = require("modules._rose-pine")
 
 hl.config({
 	general = {

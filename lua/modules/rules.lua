@@ -6,10 +6,10 @@ hl.window_rule({
 	-- Yes
 	name = "everything starts looong",
 	match = {
-		class = "*",
+		class = "^.",
 	},
 
-	scrolling_width = 2.0,
+	scrolling_width = 1.0,
 })
 
 hl.window_rule({

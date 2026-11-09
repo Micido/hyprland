@@ -2,8 +2,7 @@
 ---- KEYBINDINGS ----
 ---------------------
 
-local altTab = require("alttab")
-local alter = require("alttaber")
+local alter = require("modules._alttaber")
 
 local mainMod = "SUPER"
 
