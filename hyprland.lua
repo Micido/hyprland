@@ -9,7 +9,7 @@ if handle then
 	end
 end
 
-require("autoload")
+require("autoload")("modules")
 
 -------------------
 ---- AUTOSTART ----
@@ -20,11 +20,9 @@ require("autoload")
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this:
 --
--- hl.on("hyprland.start", function ()
---   hl.exec_cmd(terminal)
---   hl.exec_cmd("nm-applet")
---   hl.exec_cmd("waybar & hyprpaper & firefox")
--- end)
+hl.on("hyprland.start", function ()
+  hl.exec_cmd("hyprpaper")
+end)
 
 
 -------------------------------
@@ -32,7 +30,9 @@ require("autoload")
 -------------------------------
 
 hl.env("XCURSOR_SIZE", "24")
+hl.env("XCURSOR_THEME", "BreezeX-RosePine-Linux")
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_THEME", "rose-pine-hyprcursor")
 
 ----------------
 ----  MISC  ----
